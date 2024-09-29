@@ -66,6 +66,7 @@ export default function Profile() {
 
             dispatch(updateUserSuccess(data));
             setUpdateSuccess(true);
+            
         } catch (error) {
             dispatch(updateUserFailure(error.message));
         }
@@ -83,6 +84,7 @@ export default function Profile() {
                 return;
             }
             dispatch(deleteUserSuccess(data));
+
         } catch (error) {
             dispatch(deleteUserFailure(error.message));
         }
@@ -103,6 +105,7 @@ export default function Profile() {
             dispatch(signOutUserFailure(error.message));
         }
     }
+
     return (
         <div className='p-3 max-w-lg mx-auto'>
             <h1 className='text-3xl font-semibold text-center my-7'>Profile</h1>
