@@ -73,9 +73,9 @@ export default function CreateListing() {
                         resolve(downloadURL);
                     });
                 }
-            )
-        })
-    }
+            );
+        });
+    };
 
     const handleRemoveImage = (index) => {
         setFormData({
