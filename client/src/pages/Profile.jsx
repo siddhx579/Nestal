@@ -101,10 +101,10 @@ export default function Profile() {
                 dispatch(signOutUserFailure(data.message));
                 return;
             }
-            dispatch(signOutUserSuccess(data));
+            dispatch(deleteUserSuccess(data));
 
         } catch (error) {
-            dispatch(signOutUserFailure(error.message));
+            dispatch(deleteUserFailure(error.message));
         }
     };
 
