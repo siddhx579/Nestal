@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 
 export default function Search() {
-
     const [sidebardata, setSidebardata] = useState({
         searchTerm: '',
         type: 'all',
@@ -13,7 +12,6 @@ export default function Search() {
     });
 
     console.log(sidebardata);
-    
 
     const handleChange = (e) => {
         if (e.target.id === 'all' || e.target.id === 'rent' || e.target.id === 'sale' ) {
