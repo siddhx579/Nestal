@@ -78,8 +78,8 @@ The client will run on `http://localhost:5173` by default.
 
 3. Create a `.env` file for environment variables like the env_sample file (e.g., MongoDB connection string):
    ```env
-   MONGO_URI=mongodb+srv://<username>:<password>@cluster0.mongodb.net/nestal?retryWrites=true&w=majority
-   PORT=3000
+   MONGO = "Your Mongo API"
+   JWT_SECRET = 'Your secret key'
    ```
 
 4. Start the Node.js server:
