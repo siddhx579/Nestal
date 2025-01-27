@@ -5,6 +5,7 @@ import userRouter from './routes/user.route.js';
 import authRouter from './routes/auth.route.js';
 import listingRouter from './routes/listing.route.js';
 import cookieParser from 'cookie-parser';
+import cors from 'cors';
 
 dotenv.config();
 
@@ -19,6 +20,11 @@ const app = express();
 app.use(express.json());
 
 app.use(cookieParser());
+
+app.use(cors({
+    origin: 'https://nestal.vercel.app', // Replace with your deployed client URL
+    credentials: true, // Allow credentials such as cookies
+}));
 
 app.listen(3000, () => {
     console.log('Server is running on port 3000!!!');
