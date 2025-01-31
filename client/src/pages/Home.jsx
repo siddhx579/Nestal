@@ -14,8 +14,10 @@ export default function Home() {
 
     useEffect(() => {
         const fetchOfferListings = async () => {
+            const backendUrl = import.meta.env.VITE_BACKEND_URI;
+
             try {
-                const res = await fetch('/api/listing/get?offer=true&limit=4');
+                const res = await fetch(`/api/listing/get?offer=true&limit=4`);
                 const data = await res.json();
                 setOfferListings(data);
                 fetchRentListings();
@@ -52,9 +54,9 @@ export default function Home() {
         <div>
             <div className="flex flex-col gap-6 p-28 px-3 max-w-6xl mx-auto">
                 <h1 className="text-slate-500 font-bold text-3xl lg:text-6xl">
-                    Find your next <span className="text-[#395886]">perfect</span>
+                    Your <span className="text-[#395886]">perfect</span> space awaits
                     <br />
-                    place with ease
+                    Explore, rent, and move in effortlessly!
                 </h1>
                 <div className="text-gray-500 text-xl sm:text-sm">
                     Nestal is the best place to find your next perfect place to live
@@ -69,7 +71,7 @@ export default function Home() {
                 {
                     offerListings && offerListings.length > 0 && offerListings.map((listing) => (
                         <SwiperSlide>
-                            <div className="h-[500px]" key={listing._id} style={{background: `url(${listing.imageUrls[0]}) center no-repeat`, backgroundSize:"cover"}}></div>
+                            <div className="h-[500px]" key={listing._id} style={{ background: `url(${listing.imageUrls[0]}) center no-repeat`, backgroundSize: "cover" }}></div>
                         </SwiperSlide>
                     ))
                 }
@@ -102,7 +104,7 @@ export default function Home() {
                         </div>
                     </div>
                 )}
-                
+
                 {saleListings && saleListings.length > 0 && (
                     <div className=''>
                         <div className='my-3'>
