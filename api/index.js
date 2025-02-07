@@ -22,7 +22,8 @@ app.use(express.json());
 app.use(cookieParser());
 
 app.use(cors({
-    origin: 'https://nestal.vercel.app', // Replace with your deployed client URL
+    origin: 'https://localhost:5173', // Replace with your deployed client URL
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
     credentials: true, // Allow credentials such as cookies
 }));
 
