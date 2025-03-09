@@ -32,6 +32,9 @@ app.use(cors({
 app.use("/api/user", userRouter);
 app.use("/api/auth", authRouter);
 app.use("/api/listing", listingRouter);
+app.get('/' , (req,res)=>{
+    res.send("Working");
+})
 
 app.use((err, req, res, next) => {
     const statusCode = err.statusCode || 500;
