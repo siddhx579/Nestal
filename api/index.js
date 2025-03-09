@@ -33,7 +33,7 @@ app.use("/api/user", userRouter);
 app.use("/api/auth", authRouter);
 app.use("/api/listing", listingRouter);
 app.get('/' , (req,res)=>{
-    res.send("Working");
+    console.log("working");
 })
 
 app.use((err, req, res, next) => {
